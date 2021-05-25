@@ -18,4 +18,4 @@ RUN apt-get update && \
     apt-get clean
 
 
-RUN R -e "install.packages(c('plyr', 'dplyr','DT', 'DBI', 'odbc', 'RPostgres', 'shiny', 'stringr'), repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages(c('plyr', 'dplyr','DT', 'DBI', 'odbc', 'RPostgres', 'shiny', 'stringr', 'xgboost', 'fastrmodels' , 'nflfastR'), repos='http://cran.rstudio.com/')"
