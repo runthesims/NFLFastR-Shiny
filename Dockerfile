@@ -1,5 +1,10 @@
 FROM rocker/r-base:latest
 
+## update system libraries
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get clean
+
 # system libraries of general use
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     libxml2-dev \
@@ -10,12 +15,7 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     libssh2-1-dev \
     unixodbc-dev \
     libcurl4-openssl-dev \
-    libssl-dev
-
-## update system libraries
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get clean
-
+    libssl-dev \
+    curl
 
 RUN R -e "install.packages(c('plyr', 'dplyr','DT', 'DBI', 'odbc', 'RPostgres', 'shiny', 'stringr', 'xgboost', 'fastrmodels' , 'nflfastR', 'dbplyr', 'shinyWidgets', 'shinydashboard'), repos='http://cran.rstudio.com/', dependencies = T)"
