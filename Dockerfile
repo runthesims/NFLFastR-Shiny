@@ -18,4 +18,4 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     libssl-dev \
     curl
 
-RUN R -e "install.packages(c('plyr', 'data.table',' DT', 'DBI', 'odbc', 'RPostgres', 'shiny', 'shinycssloaders', 'xgboost', 'fastrmodels' , 'nflfastR', 'dbplyr', 'shinyWidgets', 'shinydashboard', 'hrbrthemes', 'waiter', 'sever', 'glue', 'bs4Dash', 'ggtext', 'sysfonts', 'showtext'), repos='http://cran.rstudio.com/', dependencies = T)"
+RUN R -e "install.packages(c('plyr', 'data.table',' DT', 'DBI', 'odbc', 'RPostgres', 'shiny', 'shinyjs', 'shinyWidgets', 'shinycssloaders', 'reactablefmtr', 'xgboost', 'fastrmodels' , 'nflfastR', 'dbplyr', 'shinydashboard', 'hrbrthemes', 'waiter', 'sever', 'glue', 'bs4Dash', 'ggtext', 'sysfonts', 'showtext'), repos='http://cran.rstudio.com/', dependencies = T)"
